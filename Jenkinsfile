@@ -5,7 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Compiling Java program'
-                sh 'javac Hello.java'
+                sh 'rm -f Hello.class'
+                sh 'javac --release 21 Hello.java'
             }
         }
 
